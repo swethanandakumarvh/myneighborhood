@@ -13,7 +13,7 @@ import HelpThreads from './pages/HelpThreads';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gradient-to-br from-neutral-50 to-primary-50/30">
+      <div className="min-h-screen bg-dark-800">
         <Navbar />
         <main className="w-full pt-16">
           <Routes>
@@ -29,7 +29,7 @@ function App() {
         <Toaster 
           position="top-right"
           toastOptions={{
-            className: 'glass-effect',
+            className: 'glass-effect text-white',
             duration: 3000,
           }}
         />
@@ -38,4 +38,4 @@ function App() {
   );
 }
 
-export default App
+export default App;

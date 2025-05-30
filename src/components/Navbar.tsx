@@ -27,7 +27,7 @@ export default function Navbar() {
             <div className="flex h-16 justify-between items-center">
               <div className="flex items-center gap-12">
                 <Link to="/" className="flex-shrink-0">
-                  <span className="text-2xl font-bold bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent">
+                  <span className="text-2xl font-bold text-gradient">
                     ReBuild
                   </span>
                 </Link>
@@ -36,7 +36,7 @@ export default function Navbar() {
                     <Link
                       key={item.name}
                       to={item.href}
-                      className="text-sm font-medium text-neutral-600 hover:text-primary-600 transition-colors"
+                      className="text-sm font-medium text-gray-300 hover:text-primary-400 transition-colors"
                     >
                       {item.name}
                     </Link>
@@ -46,14 +46,14 @@ export default function Navbar() {
               <div className="hidden lg:flex lg:items-center lg:gap-6">
                 <button
                   type="button"
-                  className="rounded-full p-2 text-neutral-400 hover:text-primary-600 transition-colors"
+                  className="rounded-full p-2 text-gray-400 hover:text-primary-400 transition-colors"
                 >
                   <span className="sr-only">View notifications</span>
                   <BellIcon className="h-6 w-6" aria-hidden="true" />
                 </button>
 
                 <Menu as="div" className="relative">
-                  <Menu.Button className="flex rounded-full bg-white ring-2 ring-primary-100 transition-all hover:ring-primary-200 focus:outline-none">
+                  <Menu.Button className="flex rounded-full ring-2 ring-primary-400/20 transition-all hover:ring-primary-400/40">
                     <span className="sr-only">Open user menu</span>
                     <img
                       className="h-8 w-8 rounded-full object-cover"
@@ -70,14 +70,14 @@ export default function Navbar() {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-xl bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-xl bg-dark-700 py-1 shadow-lg ring-1 ring-white/10">
                       <Menu.Item>
                         {({ active }) => (
                           <a
                             href="#"
                             className={classNames(
-                              active ? 'bg-primary-50' : '',
-                              'block px-4 py-2 text-sm text-neutral-700'
+                              active ? 'bg-dark-600' : '',
+                              'block px-4 py-2 text-sm text-gray-200'
                             )}
                           >
                             Your Profile
@@ -89,8 +89,8 @@ export default function Navbar() {
                           <a
                             href="#"
                             className={classNames(
-                              active ? 'bg-primary-50' : '',
-                              'block px-4 py-2 text-sm text-neutral-700'
+                              active ? 'bg-dark-600' : '',
+                              'block px-4 py-2 text-sm text-gray-200'
                             )}
                           >
                             Settings
@@ -102,8 +102,8 @@ export default function Navbar() {
                           <a
                             href="#"
                             className={classNames(
-                              active ? 'bg-primary-50' : '',
-                              'block px-4 py-2 text-sm text-neutral-700'
+                              active ? 'bg-dark-600' : '',
+                              'block px-4 py-2 text-sm text-gray-200'
                             )}
                           >
                             Sign out
@@ -115,7 +115,7 @@ export default function Navbar() {
                 </Menu>
               </div>
               <div className="flex lg:hidden">
-                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-neutral-400 hover:bg-primary-50 hover:text-primary-600">
+                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-dark-700 hover:text-primary-400">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
@@ -133,7 +133,7 @@ export default function Navbar() {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className="block px-3 py-2 text-base font-medium text-neutral-600 hover:bg-primary-50 hover:text-primary-600 rounded-lg"
+                  className="block px-3 py-2 text-base font-medium text-gray-300 hover:bg-dark-700 hover:text-primary-400 rounded-lg"
                 >
                   {item.name}
                 </Link>
