@@ -23,3 +23,13 @@
 .card-hover:hover {
   transform: translateY(-4px);
 }
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
