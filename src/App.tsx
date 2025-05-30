@@ -13,9 +13,9 @@ import HelpThreads from './pages/HelpThreads';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gradient-to-b from-sky-100 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-neutral-50 to-neutral-100">
         <Navbar />
-        <main className="container mx-auto px-4 py-8">
+        <main className="max-w-[1400px] mx-auto px-6 py-12">
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/businesses" element={<BusinessListings />} />
@@ -26,7 +26,13 @@ function App() {
             <Route path="/help-threads" element={<HelpThreads />} />
           </Routes>
         </main>
-        <Toaster position="top-right" />
+        <Toaster 
+          position="top-right"
+          toastOptions={{
+            className: 'bg-white shadow-xl',
+            duration: 3000,
+          }}
+        />
       </div>
     </Router>
   );

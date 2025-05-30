@@ -20,47 +20,45 @@ function classNames(...classes: string[]) {
 
 export default function Navbar() {
   return (
-    <Disclosure as="nav" className="bg-white shadow">
+    <Disclosure as="nav" className="bg-white border-b border-neutral-100">
       {({ open }) => (
         <>
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="flex h-16 justify-between">
-              <div className="flex">
-                <div className="flex flex-shrink-0 items-center">
-                  <span className="text-2xl font-bold bg-gradient-to-r from-sky-600 to-indigo-600 bg-clip-text text-transparent">MyNeighbourHub</span>
-                </div>
-                <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+          <div className="max-w-[1400px] mx-auto px-6">
+            <div className="flex h-20 justify-between items-center">
+              <div className="flex items-center gap-12">
+                <Link to="/" className="flex-shrink-0">
+                  <span className="text-2xl font-bold tracking-tight">ReBuild</span>
+                </Link>
+                <div className="hidden lg:flex lg:gap-8">
                   {navigation.map((item) => (
                     <Link
                       key={item.name}
                       to={item.href}
-                      className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-sky-500 hover:text-gray-700 transition-colors"
+                      className="text-sm font-medium text-neutral-600 hover:text-neutral-900 transition-colors"
                     >
                       {item.name}
                     </Link>
                   ))}
                 </div>
               </div>
-              <div className="hidden sm:ml-6 sm:flex sm:items-center">
+              <div className="hidden lg:flex lg:items-center lg:gap-6">
                 <button
                   type="button"
-                  className="rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
+                  className="rounded-full p-2 text-neutral-400 hover:text-neutral-500 transition-colors"
                 >
                   <span className="sr-only">View notifications</span>
                   <BellIcon className="h-6 w-6" aria-hidden="true" />
                 </button>
 
-                <Menu as="div" className="relative ml-3">
-                  <div>
-                    <Menu.Button className="flex rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2">
-                      <span className="sr-only">Open user menu</span>
-                      <img
-                        className="h-8 w-8 rounded-full"
-                        src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg"
-                        alt=""
-                      />
-                    </Menu.Button>
-                  </div>
+                <Menu as="div" className="relative">
+                  <Menu.Button className="flex rounded-full bg-white text-sm focus:outline-none">
+                    <span className="sr-only">Open user menu</span>
+                    <img
+                      className="h-8 w-8 rounded-full object-cover"
+                      src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg"
+                      alt=""
+                    />
+                  </Menu.Button>
                   <Transition
                     as={Fragment}
                     enter="transition ease-out duration-200"
@@ -70,14 +68,14 @@ export default function Navbar() {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-lg bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                       <Menu.Item>
                         {({ active }) => (
                           <a
                             href="#"
                             className={classNames(
-                              active ? 'bg-gray-50' : '',
-                              'block px-4 py-2 text-sm text-gray-700'
+                              active ? 'bg-neutral-50' : '',
+                              'block px-4 py-2 text-sm text-neutral-700'
                             )}
                           >
                             Your Profile
@@ -89,8 +87,8 @@ export default function Navbar() {
                           <a
                             href="#"
                             className={classNames(
-                              active ? 'bg-gray-50' : '',
-                              'block px-4 py-2 text-sm text-gray-700'
+                              active ? 'bg-neutral-50' : '',
+                              'block px-4 py-2 text-sm text-neutral-700'
                             )}
                           >
                             Settings
@@ -102,8 +100,8 @@ export default function Navbar() {
                           <a
                             href="#"
                             className={classNames(
-                              active ? 'bg-gray-50' : '',
-                              'block px-4 py-2 text-sm text-gray-700'
+                              active ? 'bg-neutral-50' : '',
+                              'block px-4 py-2 text-sm text-neutral-700'
                             )}
                           >
                             Sign out
@@ -114,8 +112,8 @@ export default function Navbar() {
                   </Transition>
                 </Menu>
               </div>
-              <div className="-mr-2 flex items-center sm:hidden">
-                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500">
+              <div className="flex lg:hidden">
+                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-neutral-400 hover:bg-neutral-50 hover:text-neutral-500">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
@@ -127,13 +125,13 @@ export default function Navbar() {
             </div>
           </div>
 
-          <Disclosure.Panel className="sm:hidden">
-            <div className="space-y-1 pb-3 pt-2">
+          <Disclosure.Panel className="lg:hidden">
+            <div className="space-y-1 px-4 pb-3 pt-2">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-sky-500 hover:bg-gray-50 hover:text-gray-700"
+                  className="block px-3 py-2 text-base font-medium text-neutral-600 hover:bg-neutral-50 hover:text-neutral-900 rounded-md"
                 >
                   {item.name}
                 </Link>
