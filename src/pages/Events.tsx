@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { format } from 'date-fns';
 
 interface Event {
@@ -77,7 +77,8 @@ export default function Events() {
                 <div>
                   <dt className="text-sm font-medium text-gray-500">Date & Time</dt>
                   <dd className="mt-1 text-sm text-gray-900">
-                    {format(new Date(event.dateTime), 'PPpp')}
+                    {format(new Date(event.dateTime), '
+PPpp')}
                   </dd>
                 </div>
                 <div>
