@@ -27,14 +27,14 @@ export default function Navbar() {
             <div className="flex h-16 justify-between">
               <div className="flex">
                 <div className="flex flex-shrink-0 items-center">
-                  <span className="text-2xl font-bold text-indigo-600">MyNeighbourHub</span>
+                  <span className="text-2xl font-bold bg-gradient-to-r from-sky-600 to-indigo-600 bg-clip-text text-transparent">MyNeighbourHub</span>
                 </div>
                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
                   {navigation.map((item) => (
                     <Link
                       key={item.name}
                       to={item.href}
-                      className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                      className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-sky-500 hover:text-gray-700 transition-colors"
                     >
                       {item.name}
                     </Link>
@@ -44,7 +44,7 @@ export default function Navbar() {
               <div className="hidden sm:ml-6 sm:flex sm:items-center">
                 <button
                   type="button"
-                  className="rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                  className="rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
                 >
                   <span className="sr-only">View notifications</span>
                   <BellIcon className="h-6 w-6" aria-hidden="true" />
@@ -52,7 +52,7 @@ export default function Navbar() {
 
                 <Menu as="div" className="relative ml-3">
                   <div>
-                    <Menu.Button className="flex rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                    <Menu.Button className="flex rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2">
                       <span className="sr-only">Open user menu</span>
                       <img
                         className="h-8 w-8 rounded-full"
@@ -76,7 +76,7 @@ export default function Navbar() {
                           <a
                             href="#"
                             className={classNames(
-                              active ? 'bg-gray-100' : '',
+                              active ? 'bg-gray-50' : '',
                               'block px-4 py-2 text-sm text-gray-700'
                             )}
                           >
@@ -89,7 +89,7 @@ export default function Navbar() {
                           <a
                             href="#"
                             className={classNames(
-                              active ? 'bg-gray-100' : '',
+                              active ? 'bg-gray-50' : '',
                               'block px-4 py-2 text-sm text-gray-700'
                             )}
                           >
@@ -102,7 +102,7 @@ export default function Navbar() {
                           <a
                             href="#"
                             className={classNames(
-                              active ? 'bg-gray-100' : '',
+                              active ? 'bg-gray-50' : '',
                               'block px-4 py-2 text-sm text-gray-700'
                             )}
                           >
@@ -115,7 +115,7 @@ export default function Navbar() {
                 </Menu>
               </div>
               <div className="-mr-2 flex items-center sm:hidden">
-                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
@@ -133,7 +133,7 @@ export default function Navbar() {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
+                  className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-sky-500 hover:bg-gray-50 hover:text-gray-700"
                 >
                   {item.name}
                 </Link>

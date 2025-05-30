@@ -13,7 +13,7 @@ import HelpThreads from './pages/HelpThreads';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gradient-to-b from-sky-100 to-white">
         <Navbar />
         <main className="container mx-auto px-4 py-8">
           <Routes>
