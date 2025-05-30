@@ -15,7 +15,7 @@ function App() {
     <Router>
       <div className="min-h-screen bg-gradient-to-b from-neutral-50 to-neutral-100">
         <Navbar />
-        <main className="max-w-[1400px] mx-auto px-6 py-12">
+        <main className="w-full">
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/businesses" element={<BusinessListings />} />

@@ -20,11 +20,11 @@ export default {
           900: '#171717',
         },
       },
-      maxWidth: {
-        '8xl': '1400px',
-      },
       fontFamily: {
         sans: ['Inter var', 'sans-serif'],
+      },
+      height: {
+        'screen-90': '90vh',
       },
     },
   },
